@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 pdf_path = BASE_DIR / "DocumentLoader" / "Files" / "GRU.pdf"
 
-def document_loader(pdf_path):
+def document_loader():
     loader = PyPDFLoader(pdf_path)
     docs = loader.load()
     return docs
