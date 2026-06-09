@@ -1,7 +1,7 @@
-from retrival import get_retreval
-from embedding import embedding_model
-from create_prompt import RAG_PROMPT
-from chatmodel import chat_LLM
+from .retrival import get_retreval
+from .embedding import embedding_model
+from .create_prompt import RAG_PROMPT
+from .chatmodel import chat_LLM
 
 embedding_model = embedding_model()
 

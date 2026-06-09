@@ -1,5 +1,5 @@
 
-from vector_store import load_vector_db
+from .vector_store import load_vector_db
 
 def get_retreval(embedding_model):
     vector_store = load_vector_db(

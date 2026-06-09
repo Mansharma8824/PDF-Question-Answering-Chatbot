@@ -1,4 +1,8 @@
-from flask import Flask, render_template, request,jsonify
+from flask import Flask, render_template, request, jsonify
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from src.qa_result import create_qa_rag
 
 
 app = Flask(__name__)
@@ -14,8 +18,12 @@ def chat():
     data = request.get_json()
     
     question = data['question']
+
+    final_res = create_qa_rag(question)
+
+    print(final_res.content)
     return jsonify({
-        "answer": f"You asked: {question}"
+        "answer": f"{final_res.content}"
     })
 
 
