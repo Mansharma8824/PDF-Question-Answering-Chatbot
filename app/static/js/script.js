@@ -1,34 +1,57 @@
-async function sendMessage()
-    {
-      const questionInput = document.getElementById("questionInput").value;
-      
-      const chatContainer = document.getElementById("chatContainer");
+const questionInput = document.getElementById("questionInput");
 
-      chatContainer.innerHTML +=  `
+async function sendMessage() {
+
+    const chatContainer =
+        document.getElementById("chatContainer");
+
+    const input =
+        questionInput.value.trim();
+
+    if (!input) {
+        return;
+    }
+    chatContainer.innerHTML += `
         <div class="user-message">
-            ${questionInput}
+            ${input}
         </div>
-      `;
+    `;
 
-      const response = await fetch("/chat",{
-      method: "POST",
-      headers:{
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        question:questionInput
+    // Clear textbox
+    questionInput.value = "";
+
+    chatContainer.scrollTop =
+        chatContainer.scrollHeight;
+
+    const response = await fetch("/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            question: input
         })
-      });
+    });
 
-      console.log("send secussefuly");
+    console.log("send successfully");
 
-      data = await response.json()
+    const data = await response.json();
 
-      chatContainer.innerHTML +=  `
+    // Show AI response
+    chatContainer.innerHTML += `
         <div class="bot-message">
             ${data.answer}
         </div>
-      `;
-      document.getElementById("questionInput").value = "";
+    `;
 
+    chatContainer.scrollTop =
+        chatContainer.scrollHeight;
 }
+
+questionInput.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+
+});
