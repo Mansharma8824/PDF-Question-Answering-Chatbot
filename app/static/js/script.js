@@ -78,5 +78,11 @@ async function uploadFile()
 
     });
 
+    const data = await response.json();
+
+    document.getElementById("uploadedFile").innerHTML = `
+        📄 ${data.filename}
+    `;
+
 
 }

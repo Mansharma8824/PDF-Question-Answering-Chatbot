@@ -42,13 +42,14 @@ def upload():
     
     filepath = os.path.join(
         UPLOAD_FOLDER,
-        "current.pdf"
+        file.filename
     )
 
     file.save(filepath)
 
     return jsonify({
-        "message": "PDF uploaded successfully"
+        "message": "PDF uploaded successfully",
+        "filename": file.filename
     })
 
 
