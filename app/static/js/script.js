@@ -55,3 +55,28 @@ questionInput.addEventListener("keydown", function(event) {
     }
 
 });
+
+
+async function uploadFile()
+{
+    const file_input = document.getElementById("pdfUpload");
+
+    const file = file_input.files[0];
+
+    if (!file) {
+        alert("Please select a PDF");
+        return;
+    }
+
+    const formdata = new FormData();
+
+    formdata.append("pdf",file);
+
+    const response = await fetch('/upload',{
+        method : "POST",
+        body: formdata
+
+    });
+
+
+}

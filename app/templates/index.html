@@ -14,16 +14,16 @@
 
     <div class="sidebar">
       <h2>📄 Documents</h2>
-
-      <input type="file" id="pdfUpload" multiple>
-
+      <div class="document-upload">
+        <input type="file" id="pdfUpload" name = "pdf"> <br>
+        <button type="button" id="upload-file" onclick="uploadFile()">Upload</button>
+      </div>
       <div class="document-list">
         <div class="doc-item">sample.pdf</div>
       </div>
     </div>
 
     <div class="chat-section">
-
       <div class="header">
         <h1>PDF Question Answering Chatbot</h1>
       </div>

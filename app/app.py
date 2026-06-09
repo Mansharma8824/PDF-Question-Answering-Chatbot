@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request, jsonify
 import os
 import sys
+from pathlib import Path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.qa_result import create_qa_rag
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+UPLOAD_FOLDER = BASE_DIR / "DocumentLoader" / "Files"
 
 app = Flask(__name__)
 
@@ -24,6 +27,28 @@ def chat():
     print(final_res.content)
     return jsonify({
         "answer": f"{final_res.content}"
+    })
+    
+    
+    
+@app.route("/upload", methods = ['POST'])
+def upload():
+    file = request.files.get("pdf")
+    
+    if not file:
+        return jsonify({
+            "message": "No file selected"
+        }), 400
+    
+    filepath = os.path.join(
+        UPLOAD_FOLDER,
+        "current.pdf"
+    )
+
+    file.save(filepath)
+
+    return jsonify({
+        "message": "PDF uploaded successfully"
     })
 
 

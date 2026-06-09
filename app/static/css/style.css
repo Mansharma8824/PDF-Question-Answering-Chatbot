@@ -25,10 +25,28 @@
     .sidebar h2 {
       margin-bottom: 20px;
     }
+    .document-upload{
+      width: 100%;
+      margin-bottom: 20px;
+    }
 
     #pdfUpload {
       width: 100%;
-      margin-bottom: 20px;
+      /* margin-bottom: 20px; */
+    }
+
+    #upload-file{
+      display: inline-block;
+      width: 30%;
+      max-width: 40%; 
+      min-height: 30px;
+      margin-top: 5px;
+
+      color: #ffffff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
     .document-list {
