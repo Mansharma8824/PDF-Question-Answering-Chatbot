@@ -225,4 +225,4 @@ Add screenshots here after completing the UI.
 ## 👨‍💻 Author
 
 Manish Kumar
-LinkedIn: https://www.linkedin.com/in/manish-kumar-2518b6242/
+- LinkedIn: https://www.linkedin.com/in/manish-kumar-2518b6242/
