@@ -1,9 +1,9 @@
 from .retrival import get_retreval
-from .embedding import embedding_model
+from .embedding import embedding_model as get_embedding_model
 from .create_prompt import RAG_PROMPT
 from .chatmodel import chat_LLM
 
-embedding_model = embedding_model()
+embedding_model = get_embedding_model()
 
 def create_qa_rag(question):
     retriever = get_retreval(embedding_model)

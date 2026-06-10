@@ -4,6 +4,10 @@ import sys
 from pathlib import Path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.qa_result import create_qa_rag
+from src.pdf_loader import document_loader
+from src.file_chunking import chunking_document
+from src.embedding import embedding_model as get_embedding_model
+from src.vector_store import create_vector_db
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 UPLOAD_FOLDER = BASE_DIR / "DocumentLoader" / "Files"
@@ -46,6 +50,23 @@ def upload():
     )
 
     file.save(filepath)
+    
+    # Documents loading 
+    docs = document_loader(filepath)
+
+    # creating chunks 
+    chunks = chunking_document(docs)
+    
+    # Embedding model loading
+    embedding_model = get_embedding_model()
+
+    # create vector store
+    create_vector_db(
+        chunks=chunks,
+        embedding_model=embedding_model
+    )
+    
+    print("Vector DB created sucessfuly")
 
     return jsonify({
         "message": "PDF uploaded successfully",
