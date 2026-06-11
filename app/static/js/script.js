@@ -40,7 +40,7 @@ async function sendMessage() {
     // Show AI response
     chatContainer.innerHTML += `
         <div class="bot-message">
-            ${data.answer}
+            ${marked.parse(data.answer)}
         </div>
     `;
 

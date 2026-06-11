@@ -5,6 +5,6 @@ load_dotenv()
 def chat_LLM():
     llm = ChatGoogleGenerativeAI(
         model = 'gemini-2.5-flash-lite',
-         max_tokens=50
+         max_tokens=70
     )
     return llm 
