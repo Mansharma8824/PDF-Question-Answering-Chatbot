@@ -201,12 +201,19 @@ http://127.0.0.1:5000
 Add screenshots here after completing the UI.
 
 ### Home Page
+<img width="1902" height="961" alt="Screenshot 2026-06-11 162227" src="https://github.com/user-attachments/assets/e20e51ba-1a23-43ec-835a-ebb6f74bd00e" />
 
-![Home Page](screenshots/home.png)
+## Alert if uploading without file selected
+<img width="1902" height="942" alt="Screenshot 2026-06-11 162252" src="https://github.com/user-attachments/assets/d96c812a-c54f-47c7-a438-4d33eee02843" />
+
+## Selecting File
+<img width="1912" height="945" alt="Screenshot 2026-06-11 162326" src="https://github.com/user-attachments/assets/6fe2cd0d-0c8d-4321-9d97-404bf2b820d8" />
+
+## Sidebar after Uploading the file 
+<img width="335" height="388" alt="Screenshot 2026-06-11 162442" src="https://github.com/user-attachments/assets/1c200fc7-30ca-4952-85ff-fc86c742fe00" />
 
 ### Chat Interface
-
-![Chat](screenshots/chat.png)
+<img width="1911" height="921" alt="Screenshot 2026-06-11 164305" src="https://github.com/user-attachments/assets/82313ac9-960c-44e8-bbe2-70ef868fd6ab" />
 
 ---
 
